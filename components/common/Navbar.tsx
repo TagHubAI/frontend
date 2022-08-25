@@ -1,10 +1,11 @@
 import { useFocusTrap, useScrollLock, useWindowScroll } from '@mantine/hooks';
 import { Hamburger } from 'components/Hamburger';
-import { stagger, timeline } from 'motion';
+import { animate, stagger, timeline } from 'motion';
 import Link from 'next/link';
 import cx from 'clsx';
 import { useEffect, useRef, useState } from 'react';
 import { Transition } from 'react-transition-group';
+import Logo from 'components/graphics/Logo';
 
 const links = [
   {
@@ -21,10 +22,45 @@ const links = [
   },
   {
     name: 'About',
-    href: '/About',
+    href: '/about',
   },
 ];
+
 const duration = 0.5;
+const navOpen = () =>
+  timeline(
+    [
+      ['#mobile-nav', { height: [0, 'calc(100vh - 4rem)'] }, { duration }],
+      [
+        '#mobile-nav a',
+        {
+          opacity: [0, 1],
+          y: [-16, 0],
+        },
+        { duration, delay: stagger(0.1), at: 0 },
+      ],
+    ],
+    { duration }
+  );
+const navClose = () =>
+  timeline(
+    [
+      [
+        '#mobile-nav a',
+        {
+          opacity: [1, 0],
+          y: [0, -16],
+        },
+        { duration, delay: stagger(0.1), at: 0 },
+      ],
+      [
+        '#mobile-nav',
+        { height: ['calc(100vh - 4rem)', 0] },
+        { duration, at: duration / 3 },
+      ],
+    ],
+    { duration }
+  );
 
 export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
@@ -35,20 +71,8 @@ export default function Navbar() {
   useScrollLock(isOpen);
 
   useEffect(() => {
-    timeline(
-      [
-        ['#mobile-nav', { height: [0, 'calc(100vh - 4rem)'] }, { duration }],
-        [
-          '#mobile-nav a',
-          {
-            opacity: [0, 1],
-            y: [-16, 0],
-          },
-          { duration, delay: stagger(0.1), at: 0 },
-        ],
-      ],
-      { duration, direction: isOpen ? 'normal' : 'reverse' }
-    );
+    if (isOpen) navOpen();
+    else navClose();
   }, [isOpen]);
 
   return (
@@ -73,7 +97,15 @@ export default function Navbar() {
           m="auto"
         >
           <Link href="/">
-            <a font="bold tracking-tight" text="xl" tabIndex={isOpen ? -1 : 0}>
+            <a
+              flex="~"
+              gap="2"
+              items="center"
+              font="bold tracking-tight"
+              text="xl"
+              tabIndex={isOpen ? -1 : 0}
+            >
+              <Logo h="6" />
               TagHub
             </a>
           </Link>
@@ -111,6 +143,7 @@ export default function Navbar() {
             w="full"
             bg="white"
             p="x-6"
+            h="full"
           >
             {links.map((link) => (
               <Link key={link.name} href={link.href}>
