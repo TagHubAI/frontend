@@ -1,6 +1,6 @@
 import { useFocusTrap, useScrollLock, useWindowScroll } from '@mantine/hooks';
 import { Hamburger } from 'components/Hamburger';
-import { animate, stagger, timeline } from 'motion';
+import { stagger, timeline } from 'motion';
 import Link from 'next/link';
 import cx from 'clsx';
 import { useEffect, useRef, useState } from 'react';
@@ -65,7 +65,7 @@ const navClose = () =>
 export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
   const nodeRef = useRef<HTMLDivElement>(null);
-  const [scroll, scrollTo] = useWindowScroll();
+  const [scroll] = useWindowScroll();
 
   const focusTrapRef = useFocusTrap(isOpen);
   useScrollLock(isOpen);

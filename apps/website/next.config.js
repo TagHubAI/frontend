@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const WindiCSSWebpackPlugin = require("windicss-webpack-plugin");
+const WindiCSSWebpackPlugin = require('windicss-webpack-plugin');
 
 const nextConfig = {
   reactStrictMode: true,

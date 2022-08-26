@@ -125,6 +125,7 @@ export interface RenderOptions {
 }
 
 export interface BurgerProps extends CommonBurgerProps {
+  // eslint-disable-next-line no-unused-vars
   render: (o: RenderOptions) => ReactNode;
   lines?: number;
 }
@@ -145,6 +146,7 @@ interface CommonBurgerProps {
   /** An ARIA label to improve accessibility. */
   label?: string;
   /** A callback which receives a single boolean argument, indicating if the icon is toggled. */
+  // eslint-disable-next-line no-unused-vars
   onToggle?: (toggled: boolean) => any;
   /** Specifies if the icon bars should be rounded. */
   rounded?: boolean;
