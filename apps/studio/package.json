@@ -8,7 +8,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "npx @sanity/cli start",
-    "build": "npx @sanity/cli build"
+    "build": "npx @sanity/cli build ./build -y"
   },
   "keywords": [
     "sanity"

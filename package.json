@@ -1,10 +1,11 @@
 {
-  "name": "turborepo-basic-pnpm",
+  "name": "taghub-frontend",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "build:website": "turbo run build --filter website",
+    "build:studio": "turbo run build --filter studio",
     "dev": "turbo run dev --parallel",
     "dev:website": "turbo run dev --filter website",
     "lint": "turbo run lint",
