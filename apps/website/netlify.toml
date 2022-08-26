@@ -1,0 +1,3 @@
+[build]
+  publish = ".next/"
+  command = "cd ../../ && npx pnpm install --store=node_modules/.pnpm-store && npx pnpm build:website"

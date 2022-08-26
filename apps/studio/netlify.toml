@@ -1,0 +1,8 @@
+[build]
+  publish = "build/"
+  command = "cd ../../ && npx pnpm install --store=node_modules/.pnpm-store && npx pnpm build:studio"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
