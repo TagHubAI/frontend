@@ -8,6 +8,7 @@
     "build:studio": "turbo run build --filter studio",
     "dev": "turbo run dev --parallel",
     "dev:website": "turbo run dev --filter website",
+    "start": "turbo run start",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },

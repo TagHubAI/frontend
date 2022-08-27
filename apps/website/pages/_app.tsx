@@ -1,6 +1,6 @@
-import 'windi.css';
 import type { AppProps } from 'next/app';
 import Layout from 'components/common/Layout';
+import 'windi.css';
 
 function App({ Component, pageProps }: AppProps) {
   return (

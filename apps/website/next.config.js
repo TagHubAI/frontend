@@ -4,7 +4,7 @@ const WindiCSSWebpackPlugin = require('windicss-webpack-plugin');
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  webpack(config) {
+  webpack: (config) => {
     config.plugins.push(new WindiCSSWebpackPlugin());
     return config;
   },

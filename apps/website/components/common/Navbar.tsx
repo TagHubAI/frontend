@@ -9,16 +9,16 @@ import Logo from 'components/graphics/Logo';
 
 const links = [
   {
-    name: 'Docs',
-    href: '/docs',
-  },
-  {
     name: 'Features',
     href: '/features',
   },
   {
     name: 'Pricing',
     href: '/pricing',
+  },
+  {
+    name: 'Blog',
+    href: '/blog',
   },
   {
     name: 'About',
@@ -30,7 +30,14 @@ const duration = 0.5;
 const navOpen = () =>
   timeline(
     [
-      ['#mobile-nav', { height: [0, 'calc(100vh - 4rem)'] }, { duration }],
+      [
+        '#mobile-nav',
+        {
+          height: [0, 'calc(100vh - 4rem)'],
+          borderColor: ['transparent', 'inherit'],
+        },
+        { duration },
+      ],
       [
         '#mobile-nav a',
         {
@@ -49,14 +56,17 @@ const navClose = () =>
         '#mobile-nav a',
         {
           opacity: [1, 0],
-          y: [0, -16],
+          y: [0, -8],
         },
-        { duration, delay: stagger(0.1), at: 0 },
+        { duration, delay: stagger(0.1) },
       ],
       [
         '#mobile-nav',
-        { height: ['calc(100vh - 4rem)', 0] },
-        { duration, at: duration / 3 },
+        {
+          height: ['calc(100vh - 4rem)', 0],
+          borderColor: ['inherit', 'transparent'],
+        },
+        { duration, at: 0 },
       ],
     ],
     { duration }
@@ -80,21 +90,21 @@ export default function Navbar() {
       <nav
         pos="fixed z-10"
         w="full"
-        transition="all"
+        transition="all duration-300"
+        transform="gpu"
         className={cx(
-          scroll.y > 32 && 'border-b-1 bg-white',
-          isOpen && 'bg-white backdrop-filter-none'
+          scroll.y > 32 &&
+            'border-b-1 bg-white bg-opacity-80 backdrop-filter backdrop-blur-xl',
+          isOpen && 'bg-opacity-100'
         )}
         ref={focusTrapRef}
       >
         <div
+          className="container"
           flex="~ row"
           items="center"
           justify="between"
-          max-w="6xl"
           h="16"
-          p="x-6"
-          m="auto"
         >
           <Link href="/">
             <a
@@ -144,6 +154,8 @@ export default function Navbar() {
             bg="white"
             p="x-6"
             h="full"
+            border="t-1"
+            overflow="hidden"
           >
             {links.map((link) => (
               <Link key={link.name} href={link.href}>

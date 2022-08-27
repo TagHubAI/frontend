@@ -36,7 +36,7 @@ export default function Footer() {
       >
         <div
           max-w="64"
-          text="gray-400"
+          text="zinc-400"
           flex="~ col"
           gap="2"
           items="center sm:start"
@@ -92,11 +92,11 @@ export default function Footer() {
       </div>
 
       <div
-        border="t-1 gray-800"
+        border="t-1 zinc-800"
         m="auto"
         p="6"
         w="full"
-        text="sm center gray-400"
+        text="sm center zinc-400"
       >
         © 2022 TagHub AI. All rights reserved.
       </div>

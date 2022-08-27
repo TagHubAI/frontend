@@ -1,3 +1,9 @@
 [build]
   publish = ".next/"
   command = "cd ../../ && npx pnpm install --store=node_modules/.pnpm-store && npx pnpm build:website"
+
+[build.environment]
+NEXT_USE_NETLIFY_EDGE = "true"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"

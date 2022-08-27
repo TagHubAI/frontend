@@ -1,22 +1,13 @@
-import { SVGProps } from 'react';
-interface SVGRProps {
-  title?: string;
-  titleId?: string;
-}
+import { memo, SVGProps } from 'react';
 
-const Logo = ({
-  title = 'TagHub Logo',
-  titleId = 'title',
-  ...props
-}: SVGProps<SVGSVGElement> & SVGRProps) => (
+const SvgComponent = ({ ...props }: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 128.003 112.721"
     fill="currentColor"
-    aria-labelledby={titleId}
     {...props}
   >
-    {title ? <title id={titleId}>{title}</title> : null}
+    <title>TagHub logo</title>
     <circle cx={64.002} cy={56.36} r={15.694} />
     <circle cx={64.002} cy={20.081} r={10.446} />
     <path d="M64.002 82.194c5.769 0 10.446 4.677 10.446 10.446s-4.677 10.446-10.446 10.446-10.446-4.677-10.446-10.446 4.677-10.446 10.446-10.446Z" />
@@ -33,4 +24,5 @@ const Logo = ({
   </svg>
 );
 
+const Logo = memo(SvgComponent);
 export default Logo;
