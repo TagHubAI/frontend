@@ -1,5 +1,5 @@
 [build]
-  publish = "build/"
+  publish = "dist/"
   command = "cd ../../ && npx pnpm install --store=node_modules/.pnpm-store && npx pnpm build:studio"
 
 

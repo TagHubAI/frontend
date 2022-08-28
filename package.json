@@ -9,11 +9,11 @@
     "dev": "turbo run dev --parallel",
     "dev:website": "turbo run dev --filter website",
     "start": "turbo run start",
+    "start:studio": "turbo run start --filter studio",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "prettier": "latest",
-    "turbo": "latest"
+    "turbo": "^1.4.3"
   }
 }
