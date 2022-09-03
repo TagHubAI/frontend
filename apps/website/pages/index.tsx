@@ -47,8 +47,8 @@ const Home: NextPage = () => {
         </h1>
 
         <p text="lg md:xl zinc-500" max-w="3xl">
-          TagHub ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          TagHub makes it simple to track, monitor, and learn from data on social networks.
+          Powered by cutting edge Artificial Intelligence technology.
         </p>
 
         <button className="btn" pos="relative">
