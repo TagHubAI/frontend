@@ -64,8 +64,33 @@ export default function Footer() {
           <p font="medium" text="sm center sm:left">
             AI powered solutions for data exploration and labeling.
           </p>
-
-          <div flex="~" gap="6 sm:4" m="t-2">
+        </div>
+        <div flex="~ row wrap" gap="4 sm:8" justify="center">
+          {links.map((link) => (
+            <Link key={link.name} href={link.href}>
+              <a className="link" font="medium" text="sm" h="min">
+                {link.name}
+              </a>
+            </Link>
+          ))}
+        </div>
+      </div>
+      <div
+        border="t-1 zinc-800"
+        m="auto"
+        p="6"
+        w="full"
+        text="sm center zinc-400"
+      >
+        <div
+          className="container"
+          flex="~ col sm:row"
+          gap="2"
+          justify="between"
+          items="center"
+        >
+          <p>© 2022 TagHub AI. All rights reserved.</p>
+          <div flex="~" gap="2 sm:4">
             <Link href="https://github.com/TagHubAI/">
               <a aria-label="TagHub Repository">
                 <IoLogoGithub size="24" className="link" />
