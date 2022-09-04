@@ -19,6 +19,10 @@ const links = [
     name: 'About',
     href: '/About',
   },
+  {
+    name: 'Privacy Policy',
+    href: '/privacy',
+  },
 ];
 
 export default function Footer() {
@@ -79,7 +83,6 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-
         <div flex="~ row" gap="8">
           {links.map((link) => (
             <Link key={link.name} href={link.href}>
@@ -90,7 +93,6 @@ export default function Footer() {
           ))}
         </div>
       </div>
-
       <div
         border="t-1 zinc-800"
         m="auto"

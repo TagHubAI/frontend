@@ -6,6 +6,7 @@ import cx from 'clsx';
 import { useEffect, useRef, useState } from 'react';
 import { Transition } from 'react-transition-group';
 import Logo from 'components/graphics/Logo';
+import { useRouter } from 'next/router';
 
 const links = [
   {
@@ -76,6 +77,7 @@ export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
   const nodeRef = useRef<HTMLDivElement>(null);
   const [scroll] = useWindowScroll();
+  const router = useRouter();
 
   const focusTrapRef = useFocusTrap(isOpen);
   useScrollLock(isOpen);
@@ -85,12 +87,16 @@ export default function Navbar() {
     else navClose();
   }, [isOpen]);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [router.asPath]);
+
   return (
     <>
       <nav
         pos="fixed z-10"
         w="full"
-        transition="all duration-300"
+        transition="all"
         transform="gpu"
         className={cx(
           scroll.y > 32 &&

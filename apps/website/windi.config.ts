@@ -19,7 +19,7 @@ export default defineConfig({
   },
   plugins: [
     require('windicss/plugin/aspect-ratio'),
-    plugin(({ addUtilities }) => {
+    plugin(({ addUtilities, addComponents }) => {
       addUtilities({
         '.bg-dot': {
           backgroundImage:
@@ -42,11 +42,34 @@ export default defineConfig({
           )`,
         },
       });
+      addComponents({
+        '.article': {
+          h2: {
+            fontSize: '1.5rem',
+            fontWeight: '700',
+            marginTop: '2rem',
+          },
+          h3: {
+            fontSize: '1rem',
+            fontWeight: '700',
+            marginTop: '1rem',
+          },
+          p: {
+            margin: '0.25rem 0 0.5rem',
+          },
+          li: {
+            listStyleType: 'disc',
+            listStylePosition: 'inside',
+            margin: '0.25rem 0',
+          },
+        },
+      });
     }),
   ],
   shortcuts: {
     container: 'max-w-6xl m-auto px-6',
-    // btn: 'inline-flex w-auto cursor-pointer select-none appearance-none items-center justify-center space-x-1 rounded border border-gray-200 bg-white px-2 py-1 text-xs font-medium text-gray-800 transition hover:border-gray-300 hover:bg-gray-100 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300',
+    btn: 'inline-flex w-auto cursor-pointer select-none appearance-none items-center justify-center space-x-1 rounded border border-gray-200 bg-white px-2 py-1 text-xs font-medium text-gray-800 transition hover:border-gray-300 hover:bg-gray-100 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300',
     link: 'transition-all duration-300 text-zinc-500 hover:text-black dark:(text-zinc-400 hover:text-white)',
+    'heading-2': 'font-bold text-2xl mt-6',
   },
 });
