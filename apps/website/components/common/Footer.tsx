@@ -108,24 +108,6 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div flex="~ row" gap="8">
-          {links.map((link) => (
-            <Link key={link.name} href={link.href}>
-              <a className="link" font="medium" text="sm" h="min">
-                {link.name}
-              </a>
-            </Link>
-          ))}
-        </div>
-      </div>
-      <div
-        border="t-1 zinc-800"
-        m="auto"
-        p="6"
-        w="full"
-        text="sm center zinc-400"
-      >
-        © 2022 TagHub AI. All rights reserved.
       </div>
     </footer>
   );
