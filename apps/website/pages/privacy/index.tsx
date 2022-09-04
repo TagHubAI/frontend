@@ -8,8 +8,8 @@ export default function PrivacyPage() {
       <section className="container article" max-w="3xl">
         <p>
           In order to collect, use, and disclose your information when you use
-          our Service from TagHub Inc. (collectively &quot;TagHub,&quot;
-          &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) follows the rules
+          our Service from TagHub Co Ltd. (collectively &quot;TagHub,&quot;
+          &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) - a corporation to be formed under the laws of Socialist Republic of Vietnam, we follow the rules
           and procedures outlined in this privacy statement.
         </p>
         <p>
