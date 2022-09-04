@@ -1,11 +1,11 @@
 export default function PrivacyPage() {
   return (
-    <article className="container py-24">
+    <article className="py-24">
       <h1 font="bold" text="4xl center" m="b-8">
         Privacy Policy
       </h1>
 
-      <section className="article container" max-w="3xl">
+      <section className="container article" max-w="3xl">
         <p>
           In order to collect, use, and disclose your information when you use
           our Service from TagHub Inc. (collectively &quot;TagHub,&quot;
