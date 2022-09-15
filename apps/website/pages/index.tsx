@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import workflowImg from 'public/Home.webp';
+import workflowImg from 'public/Home.png';
 
 const Home: NextPage = () => {
   return (
@@ -32,11 +32,11 @@ const Home: NextPage = () => {
           font="bold tracking-tight !leading-tight"
           m="-b-2"
           max-w="sm sm:3xl"
+          animate="animated fade-in-up"
         >
           Next-gen{' '}
           <span
             bg="gradient-to-r !clip-text"
-            // gradient="from-[#0060f0] to-[#00dfff]"
             gradient="from-blue-500 to-rose-500"
             text="transparent"
             pos="relative"
@@ -53,18 +53,25 @@ const Home: NextPage = () => {
         </p>
 
         <button className="btn" pos="relative">
-          Book a Demo
+          Coming soon
         </button>
 
         <figure
           m="x-auto t-8 b-48"
           pos="relative"
-          shadow="xl"
           border="rounded-md"
-          before="content-DEFAULT absolute -inset-8 w-full -z-1 bg-gradient opacity-10 filter blur-xl transform-gpu"
+          before="content-DEFAULT absolute -inset-8 -z-1 bg-gradient opacity-10 filter blur-xl transform-gpu"
           w="full"
+          filter="~ drop-shadow-2xl"
         >
-          <Image src={workflowImg} alt="TagHub Workflow screen" />
+          <Image
+            src={workflowImg}
+            alt="TagHub Workflow screen"
+            style={{
+              borderRadius: '0.25rem',
+            }}
+            onLoad={() => console.log('loaded')}
+          />
         </figure>
       </section>
     </>
